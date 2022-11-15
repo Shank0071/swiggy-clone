@@ -1,0 +1,68 @@
+.footer {
+    background-color: black;
+    color:white;
+    margin-top: -4px;
+}
+
+.container2 {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5rem 0;
+    border-bottom: 1px solid gray;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pics {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+}
+
+.footer .pics img {
+    height: 70px;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+}
+
+.footer h4 {
+    color: gray;
+    margin-bottom: 1rem;
+}
+
+
+
+.footer ul {
+    list-style: none;
+    line-height: 2.5rem;
+}
+
+.footer ul li:hover {
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+}
+
+.social-media {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.social-media > img[alt="swiggyLogo"] {
+    height: 50px;
+}
+
+.social-media div img {
+    height: 30px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
