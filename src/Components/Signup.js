@@ -3,20 +3,26 @@ import swiggyLogo from "../images/swiggy_logo.jpg";
 import { auth } from "./firebase/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import { useStateValue } from "./context/StateContext";
 
 export default function Signup({ visibility1, handleClick1 }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [successMsg, setSuccessMsg] = useState(false)
+  const [state, dispatch] = useStateValue()
 
   const handleSubmit = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password).then(
       (userCredentials) => {
-        const user = userCredentials.user;
-        user.displayName = name;
-        console.log(user)
+        userCredentials.user.displayName = name;
+        userCredentials.user.providerData[0].displayName = name;
+        console.log(userCredentials.user);
+        dispatch({
+          type: 'SET_USER',
+          user: userCredentials.user.providerData[0]
+        })
       }
     ).catch(err => console.log(err.message));
     setName("")

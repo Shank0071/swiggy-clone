@@ -11,12 +11,16 @@ export default function Header() {
 
     const handleClick = () => {
         setVisibility(visibility => !visibility)
+        if (visibility1) {
         setVisibility1(visibility1 => !visibility1)
+        }
     }
 
     const handleClick1 = () => {
         setVisibility1(visibility1 => !visibility1)
-        setVisibility(visibility => !visibility)
+        if (visibility) {
+            setVisibility(visibility => !visibility)
+        }
     }
 
 
